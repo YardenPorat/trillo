@@ -1,0 +1,48 @@
+
+
+
+:root{
+    /////////////////////// colors///////////////////////
+    --clr-light:  #FF3366;
+    --clr-primary: #eb2f64;
+    --clr-dark:   #BA265D;
+    --clr-darker:   rgb(167, 34, 83);
+    //grayscale
+    --clr-white:       #fff;
+    --clr-gray-light1: #f7f7f7;
+    --clr-gray-light2: #eee; 
+    --clr-gray-light3: #ccc;
+    --clr-gray-dark1:  #333; //base dark
+    --clr-gray-dark2:  #777;
+    --clr-gray-dark3:  #999; //placeholder text, 
+    --clr-black:       #000;
+
+    --shadow-lighter: 0 2rem 5rem rgba(0,0,0,.06);
+    --shadow-light:   0 2rem 5rem rgba(0,0,0,.3);
+    --shadow-dark:    0 2rem 6rem rgba(0,0,0.7);
+    //green scale
+    --clr-green-light: #7ed56f;
+    --clr-green-regular: #55c57a;
+    --clr-green-dark: #28b485;
+    --clr-green-darker: #21966f;
+
+    --clr-orange-light: #ffb900;
+    --clr-orange-dark: #ff7730;
+
+    //purple-blue scale
+    --clr-purpleblue-light: #2998ff;
+    --clr-purpleblue-dark:  #5643fa;
+    //red-pink scale
+    --clr-redpink-light:   #FF3366;
+    --clr-redpink-primary: #eb2f64;
+    --clr-redpink-dark:    #BA265D;
+
+    /////////////////////// GRID ///////////////////////
+    --grid-width: 114rem;
+    --gutter-vertical: 8rem;
+    --gutter-vertical-small: 6rem;
+    --gutter-horizontal: 6rem;
+
+    /////////////////////// GRID ///////////////////////
+    --default-font-size: 1.6rem;
+}
