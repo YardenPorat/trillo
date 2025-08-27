@@ -129,12 +129,9 @@ body {
 }
 body {
   font-family: "Open Sans", sans-serif;
-  font-weight: 400;
-  line-height: 1.6;
-  color: --clr-gray-light2;
 }
 
-.heading-secondary {
+.heading-primary {
   font-size: 4rem;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
@@ -142,20 +139,21 @@ body {
   background-image: linear-gradient(to right, --clr-light, --clr-dark);
   display: inline-block;
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   transition: all 0.2s;
 }
 @media only screen and (max-width: 37.5em) {
-  .heading-secondary {
+  .heading-primary {
     font-size: 2.7rem;
     font-weight: 700;
   }
 }
-.heading-secondary:hover {
+.heading-primary:hover {
   transform: skewY(4deg) skewX(15deg) scale(1.1);
   text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.4);
 }
-.heading-secondary:focus {
+.heading-primary:focus {
   outline: none;
 }
 
@@ -754,35 +752,6 @@ Responsive Images - Netflix method
   opacity: 1;
 }
 
-/*
-INSTRUCTIONS:
-# opens with #popup id
-# remove from smooth scrolling function to allow popup
-
-HTML:
-<div class="popup" id="popup" >
-    <a class="popup__close-bg" href="#" onclick="history.go(-1)"></a>
-    <div class="popup__content" onclick="return false">
-        <div class="popup__left">
-            <img class="popup__img" src="../img/nat-8.jpg" alt="popup photo">
-            <img class="popup__img" src="../img/nat-9.jpg" alt="popup photo">
-        </div>
-        <div class="popup__right">
-            <a class="popup__close" href="#" onclick="history.go(-1)">&times;</a>
-            <h2 class="heading-secondary u-padding-bottom-small">Start booking now</h2>
-            <h3 class="heading3 u-padding-bottom-small">Important &ndash; Read the following information:</h3>
-            <p class="popup__text u-padding-bottom-medium">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus quasi voluptate totam vel suscipit sapiente ut praesentium, fugiat doloremque cupiditate, voluptatum iste sint corporis sequi ex animi! Qui, illum necessitatibus? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            </p>
-            <div class="u-center-text">
-                <a href="#book" class="btn btn--greenfill" onclick="history.go(-1)">Book now</a>
-            </div>
-        </div>
-
-    </div>
-    <a class="popup__close" href="#" onclick="history.go(-1)"></a>
-</div>
-*/
 .popup {
   position: fixed;
   height: 100vh;
@@ -1125,22 +1094,22 @@ HTML:
   }
 }
 .row .col-1-of-2 {
-  width: calc(( 100% - var(--gutter-horizontal) ) / 2);
+  width: calc((100% - var(--gutter-horizontal)) / 2);
 }
 .row .col-1-of-3 {
-  width: calc(( 100% - 2 * var(--gutter-horizontal) ) / 3);
+  width: calc((100% - 2 * var(--gutter-horizontal)) / 3);
 }
 .row .col-1-of-4 {
-  width: calc(( 100% - 3 * var(--gutter-horizontal) ) / 4);
+  width: calc((100% - 3 * var(--gutter-horizontal)) / 4);
 }
 .row .col-2-of-3 {
-  width: calc( 2 * (( 100% - 2 * var(--gutter-horizontal) ) /3) + var(--gutter-horizontal) );
+  width: calc(2 * (100% - 2 * var(--gutter-horizontal)) / 3 + var(--gutter-horizontal));
 }
 .row .col-2-of-4 {
-  width: calc((( 100% - 3 * var(--gutter-horizontal) ) /4) * 2 + var(--gutter-horizontal));
+  width: calc((100% - 3 * var(--gutter-horizontal)) / 4 * 2 + var(--gutter-horizontal));
 }
 .row .col-3-of-4 {
-  width: calc((( 100% - 3 * var(--gutter-horizontal) ) /4) * 3 + var(--gutter-horizontal) * 2);
+  width: calc((100% - 3 * var(--gutter-horizontal)) / 4 * 3 + var(--gutter-horizontal) * 2);
 }
 
 .container {
@@ -1544,33 +1513,6 @@ HTML:
   margin-bottom: 1.5rem;
 }
 
-/*INSTRUCTIONS:
-# JS/jQuery:
-## toggle off navigation by adding to this to the scrolling function, after prevent default:
-document.getElementById("navi-toggle").checked=false;
-
-# HTML:
-<div class="navigation">
-    <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
-    <label for="navi-toggle" class="navigation__button">
-        <span class="navigation__icon">&nbsp;</span>
-    </label>
-
-    <div class="navigation__background">&nbsp;</div>
-
-    <nav class="navigation__nav">
-        <ul class="navigation__list">
-            <label for="navi-toggle">
-                <li class="navigation__item"><label for="navi-toggle"><a href="#about" class="navigation__link"><span>01</span>About Natours</a></label></li>
-                <li class="navigation__item"><a href="#features" class="navigation__link" onclick="checkAll()"><span>02</span>Your benefits</a></li>
-                <li class="navigation__item"><a href="#tours" class="navigation__link"><span>03</span>Popular tours</a></li>
-                <li class="navigation__item"><a href="#stories" class="navigation__link"><span>04</span>Stories</a></li>
-                <li class="navigation__item"><a href="#book" class="navigation__link"><span>05</span>Book now</a></li>
-            </label>
-        </ul>
-    </nav>
-</div>
-*/
 .navigation__checkbox {
   display: none;
 }

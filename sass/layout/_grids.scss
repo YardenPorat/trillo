@@ -1,3 +1,5 @@
+@use "../abstracts/mixins";
+
 // var(--grid-width: 114rem;
 // var(--gutter-vertical: 8rem;
 // var(--gutter-vertical-small: 6rem;
@@ -5,75 +7,83 @@
 // from abstract/_variables
 
 .row {
-    max-width: var(--grid-width); //1140px in rem unit
-    margin: 0 auto; //to center row
+  max-width: var(--grid-width); //1140px in rem unit
+  margin: 0 auto; //to center row
 
-    //anyone but the last child on the row
-    &:not(:last-child){ 
-        //vertical space between rows
-        margin-bottom: var(--gutter-vertical); 
-        
+  //anyone but the last child on the row
+  &:not(:last-child) {
+    //vertical space between rows
+    margin-bottom: var(--gutter-vertical);
 
-        @include respond(tab-port){
-            margin-bottom: var(--gutter-vertical-small); 
-            //no need for gutter on 100% width
-        }
+    @include mixins.respond(tab-port) {
+      margin-bottom: var(--gutter-vertical-small);
+      //no need for gutter on 100% width
     }
-    @include respond(tab-port){
-        //no need for gutter on 100% width
-        max-width: 70rem;
-        padding: 0 3rem;
+  }
+  @include mixins.respond(tab-port) {
+    //no need for gutter on 100% width
+    max-width: 70rem;
+    padding: 0 3rem;
+  }
+  @include mixins.respond(phone) {
+    //no need for gutter on 100% width
+    max-width: 55rem;
+    padding: 0 3rem;
+  }
 
-    }
-    @include respond(phone){
-        //no need for gutter on 100% width
-        max-width: 55rem;
-        padding: 0 3rem;
-        
-    }
+  @include mixins.clearfix;
 
-    @include clearfix;
+  // all elements with classes that start with '-col'
+  [class^="col-"] {
+    // all rows floats left
+    float: left;
 
-    // all elements with classes that start with '-col'
-    [class^="col-"] { 
-        // all rows floats left
-        float: left; 
+    //for all classes who are not last child
+    &:not(:last-child) {
+      //remove margin on last column
+      margin-right: var(--gutter-horizontal);
 
-        //for all classes who are not last child
-        &:not(:last-child){ 
-            //remove margin on last column
-            margin-right: var(--gutter-horizontal);
-            
-            @include respond(tab-port){
-                //change gutter from right 2 bottom on 100% width
-                margin-right: 0;
-                margin-bottom: var(--gutter-vertical-small); 
-                
-            }
-        }
-
-        @include respond(tab-port){
-            width: 100% !important;
-        }
+      @include mixins.respond(tab-port) {
+        //change gutter from right 2 bottom on 100% width
+        margin-right: 0;
+        margin-bottom: var(--gutter-vertical-small);
+      }
     }
 
-    .col-1-of-2{
-        width: calc(( 100% - #{var(--gutter-horizontal)} ) /2 ); //sass - needs #
-        // width: calc((100%-var(--gutter-horizontal)/2); //regular css        
+    @include mixins.respond(tab-port) {
+      width: 100% !important;
     }
-    .col-1-of-3{
-        width: calc(( 100% - 2 * #{var(--gutter-horizontal)} ) /3 ); 
-    }
-    .col-1-of-4{
-        width: calc(( 100% - 3 * #{var(--gutter-horizontal)} ) /4 ); 
-    }
-    .col-2-of-3{
-        width: calc(  2 * (( 100% - 2 * #{var(--gutter-horizontal)} ) /3) + #{var(--gutter-horizontal)} ); 
-    }
-    .col-2-of-4{
-        width: calc((( 100% - 3 * #{var(--gutter-horizontal)} ) /4) * 2 + #{var(--gutter-horizontal)}); 
-    }
-    .col-3-of-4{
-        width: calc((( 100% - 3 * #{var(--gutter-horizontal)} ) /4) * 3 + #{var(--gutter-horizontal)} * 2); 
-    }
+  }
+
+  .col-1-of-2 {
+    width: calc((100% - #{var(--gutter-horizontal)}) / 2); //sass - needs #
+    // width: calc((100%-var(--gutter-horizontal)/2); //regular css
+  }
+  .col-1-of-3 {
+    width: calc((100% - 2 * #{var(--gutter-horizontal)}) / 3);
+  }
+  .col-1-of-4 {
+    width: calc((100% - 3 * #{var(--gutter-horizontal)}) / 4);
+  }
+  .col-2-of-3 {
+    width: calc(
+      2 * ((100% - 2 * #{var(--gutter-horizontal)}) / 3) + #{var(
+          --gutter-horizontal
+        )}
+    );
+  }
+  .col-2-of-4 {
+    width: calc(
+      ((100% - 3 * #{var(--gutter-horizontal)}) / 4) * 2 + #{var(
+          --gutter-horizontal
+        )}
+    );
+  }
+  .col-3-of-4 {
+    width: calc(
+      ((100% - 3 * #{var(--gutter-horizontal)}) / 4) * 3 + #{var(
+          --gutter-horizontal
+        )} * 2
+    );
+  }
 }
